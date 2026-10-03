@@ -1,0 +1,41 @@
+{
+	"name": "webpack-template",
+	"version": "1.0.0",
+	"description": "",
+	"main": "/dist/scripts/index.js",
+	"scripts": {
+		"build": "tsc && webpack --config ./webpack/webpack.prod.mjs ",
+		"dev": "tsc && webpack serve --config ./webpack/webpack.dev.mjs ",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/seba3510/Webpack-Template.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"bugs": {
+		"url": "https://github.com/seba3510/Webpack-Template/issues"
+	},
+	"homepage": "https://github.com/seba3510/Webpack-Template#readme",
+	"devDependencies": {
+		"@babel/preset-typescript": "^8.0.1",
+		"@eslint/js": "^10.0.1",
+		"@types/node": "^26.6.3",
+		"css-loader": "^7.1.5",
+		"eslint": "^10.11.0",
+		"html-loader": "^5.1.0",
+		"html-webpack-plugin": "^5.6.8",
+		"style-loader": "^4.0.0",
+		"ts-loader": "^9.6.2",
+		"ts-node": "^10.9.2",
+		"typescript": "6.0.3",
+		"typescript-eslint": "^8.71.0",
+		"webpack": "^5.111.1",
+		"webpack-cli": "^7.2.3",
+		"webpack-dev-server": "^6.0.0",
+		"webpack-merge": "^6.0.1"
+	}
+}
