@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "tsc && webpack --config ./webpack/webpack.prod.mjs ",
 		"dev": "tsc && webpack serve --config ./webpack/webpack.dev.mjs ",
-		"test": "jest --watch"
+		"test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
 	},
 	"repository": {
 		"type": "git",
