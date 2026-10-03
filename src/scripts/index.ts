@@ -1,5 +1,1 @@
-function sum(x: number, y: number): number {
-	return x + y;
-} // sum()
-
-export { sum };
+console.log("Hello, World!");

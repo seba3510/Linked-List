@@ -46,6 +46,11 @@ export default {
 					},
 				},
 			},
+			{
+				test: /\.jsx?$/,
+				exclude: ["node_modules"],
+				use: ["babel-loader"],
+			},
 		],
 	},
 	plugins: [

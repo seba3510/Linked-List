@@ -6,13 +6,13 @@
 		"outDir": "./dist",
 
 		"noImplicitAny": true,
-		"moduleResolution": "bundler",
+		"moduleResolution": "nodenext",
 		"allowJs": true,
 		// Environment Settings
 		// See also https://aka.ms/tsconfig/module
 		"lib": ["ESNext", "DOM", "DOM.Iterable"],
-		"module": "esnext",
-		"target": "esnext",
+		"module": "nodenext",
+		"target": "ESNext",
 		// For nodejs:
 		"types": ["node", "jest"],
 		// and npm install -D @types/node
@@ -34,6 +34,10 @@
 		// "noFallthroughCasesInSwitch": true,
 		// "noPropertyAccessFromIndexSignature": true,
 
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		// "rewriteRelativeImportExtensions": true,
+
 		// Recommended Options
 		"strict": true,
 		"jsx": "react-jsx",
@@ -41,7 +45,9 @@
 		"isolatedModules": true,
 		"noUncheckedSideEffectImports": true,
 		"moduleDetection": "force",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+
+		"noEmit": true
 	},
 
 	"include": ["src/**/*"],
