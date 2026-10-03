@@ -1,10 +1,10 @@
 export default defineConfig([
 	{
-		files: ["**/*.{js}"],
+		files: ["**/*.js"],
 		extends: [js.configs.recommended],
 	},
 	{
-		files: ["**/*.{ts}"],
+		files: ["**/*.ts"],
 		extends: [tseslint.configs.recommendedTypeChecked],
 		languageOptions: {
 			parserOptions: {
