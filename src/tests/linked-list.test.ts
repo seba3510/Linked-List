@@ -1,5 +1,5 @@
 import { ElementNotFoundError } from "../errors/ElementNotFoundError.js";
-import { LinkedList } from "../scripts/LinkedList.js";
+import { LinkedList } from "../scripts/modules/linked-list.js";
 
 let list: LinkedList<string>;
 
