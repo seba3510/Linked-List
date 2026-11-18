@@ -1,6 +1,6 @@
-import { ElementNotFoundError } from "../errors/ElementNotFoundError.js";
-import { EmptyLinkedListError } from "../errors/EmptyLinkedListError.ts.js";
-import { IndexNotFoundError } from "../errors/IndexNotFoundError.js";
+import { ElementNotFoundError } from "../../errors/ElementNotFoundError.js";
+import { EmptyLinkedListError } from "../../errors/EmptyLinkedListError.ts.js";
+import { IndexNotFoundError } from "../../errors/IndexNotFoundError.js";
 import { Node } from "./Node.js";
 
 class LinkedList<T> {
@@ -209,6 +209,67 @@ class LinkedList<T> {
 			return this.findIndexHelper(value, index + 1, curr.next);
 		} // else
 	} // findIndexHelper()
+
+	public insertAt(index: number, value: T): void {
+		const isIndexOutOfBounds: boolean = index <= 0 || index >= this.size();
+
+		if (isIndexOutOfBounds) {
+			const message: string =
+				"Cannot insert value at the given index, because the index is out-of-bounds";
+
+			throw new RangeError(message);
+		} // if
+
+		const isIndexAtHead: boolean = index === 0;
+
+		const isIndexAtTail: boolean = index === this.size() - 1;
+
+		if (isIndexAtHead) {
+			this.prepend(value);
+		} // if
+		else if (isIndexAtTail) {
+			this.append(value);
+		} // else if
+		else {
+			const curr: Node<T> = this.head as Node<T>;
+
+			const position: number = this.size();
+
+			this.insertAtHelper(index, value, curr, position);
+		} // else
+	} // insertAt()
+
+	private insertAtHelper(
+		index: number,
+		value: T,
+		curr: Node<T>,
+		position: number,
+	): void {
+		const isNodeEmpty: boolean = curr.next === null;
+
+		const isPositionFound: boolean = position === index;
+
+		if (isNodeEmpty) {
+			return;
+		} // if
+		else if (isPositionFound) {
+			const temp: Node<T> = new Node<T>();
+
+			temp.data = value;
+
+			curr.next = temp;
+
+			curr = temp;
+
+			this.numNodes++;
+
+			return;
+		} // else if
+		else {
+			// @ts-expect-error
+			this.insertAtHelper(index, value, curr.next, position + 1);
+		} // else
+	} // insertAtHelper()
 
 	public toString(): string {
 		let listStr: string = "";
